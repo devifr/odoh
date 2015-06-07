@@ -18,12 +18,20 @@
   .form-group
     = f.label :group
     .controls 
-      = f.select :group, options_for_select(@groups, @mamum.group), {prompt: 'Select Group'}, {class: 'form-control', 'data-url': select_murrabis_path}
+      - if murrobi?
+        = current_user.group
+        = f.hidden_field :group, current_user.group  
+      - else
+        = f.select :group, options_for_select(@groups, @mamum.group), {prompt: 'Select Group'}, {class: 'form-control', 'data-url': select_murrabis_path}
   .form-group
     = f.label :murrabi
     .controls.get-murrobis
-      - if @murrobis
-        = f.select(:parent_id, options_from_collection_for_select(@murrobis, :id, :name, @mamum.try(:parent_id)), {prompt: 'Select Murrobi'}, class: "form-control")
+      - if murrobi?
+        = current_user.name
+        = f.hidden_field :parent_id, current_user.id        
+      - else
+        - if @murrobis
+          = f.select(:parent_id, options_from_collection_for_select(@murrobis, :id, :name, @mamum.try(:parent_id)), {prompt: 'Select Murrobi'}, class: "form-control")
   .form-group
     = f.label :alamat
     .controls 

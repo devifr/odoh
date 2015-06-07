@@ -4,7 +4,7 @@ class MamumsController < ApplicationController
   before_action :set_select, except: [:show, :index, :destroy]
 
   def index
-    @mamums = Mamum.page(params[:page])
+    @mamums = Mamum.filter_by_murrobi(current_user).page(params[:page])
   end
 
   def show
