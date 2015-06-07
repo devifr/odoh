@@ -1,0 +1,33 @@
+.container
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title List Murrobi
+    .panel-body
+      = link_to 'New', new_murrobi_path, class: 'btn btn-default'
+      %table.table.table-hover.table-bordered.table-striped
+        %thead
+          %tr
+            %th
+              Group
+            %th
+              Name
+            %th
+              Email
+            %th
+              Phone
+            %th
+              Action
+        %tbody
+          - @murrobis.each do |murrobi|
+            %tr
+              %td 
+                =murrobi.group
+              %td 
+                =murrobi.name
+              %td 
+                =murrobi.email
+              %td 
+                =murrobi.no_telp
+              %td 
+                = link_to 'Edit', edit_murrobi_path(murrobi.id)
+                = link_to 'Destroy', murrobi_path(murrobi.id), method: :delete, data: { confirm: 'Are you sure?' }

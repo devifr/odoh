@@ -1,0 +1,49 @@
+= form_failure_message @mamum
+- url_path = @mamum.new_record? ? mamums_path : mamum_path
+- method = @mamum.new_record? ? "post" : "put"
+= form_for @mamum, url: url_path, html: { role: 'form', method: method } do |f|
+
+  .form-group
+    = f.label :name
+    .controls 
+      = f.text_field :name, placeholder: 'Nama', class: 'form-control'
+  .form-group
+    = f.label :email
+    .controls 
+      = f.text_field :email, placeholder: 'nama@mail.com', class: 'form-control'
+  .form-group
+    = f.label :password
+    .controls 
+      = f.password_field :password, class: 'form-control'
+  .form-group
+    = f.label :group
+    .controls 
+      = f.select :group, options_for_select(@groups, @mamum.group), {prompt: 'Select Group'}, {class: 'form-control', 'data-url': select_murrabis_path}
+  .form-group
+    = f.label :murrabi
+    .controls.get-murrobis
+      - if @murrobis
+        = f.select(:parent_id, options_from_collection_for_select(@murrobis, :id, :name, @mamum.try(:parent_id)), {prompt: 'Select Murrobi'}, class: "form-control")
+  .form-group
+    = f.label :alamat
+    .controls 
+      = f.text_area :alamat, class: 'form-control'
+  .form-group
+    = f.label :no_telp
+    .controls 
+      = f.text_field :no_telp, placeholder: '082312316', class: 'form-control'
+  .form-group
+    = f.label :pin_bb
+    .controls 
+      = f.text_field :pin_bb, placeholder: 'A1BCA1', class: 'form-control'
+  .form-group
+    = f.label :facebook
+    .controls 
+      = f.text_field :facebook, placeholder: 'http://facebook/name', class: 'form-control'
+  .form-group
+    = f.label :twitter
+    .controls 
+      = f.text_field :twitter, placeholder: 'http://twitter/name', class: 'form-control'
+  .form-group
+    = f.submit 'Save', class: 'btn btn-primary'
+    = link_to 'Back', mamums_path, class: 'btn btn-default'

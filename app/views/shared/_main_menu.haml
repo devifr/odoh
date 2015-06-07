@@ -1,0 +1,24 @@
+%ul.nav.navbar-nav
+  %li
+    = link_to 'Dashboard', '#'
+  %li
+    = link_to 'Report Hafalan', '#'
+  - if admin?
+    %li
+      = link_to 'Murrobi', murrobis_path
+    %li
+      = link_to 'Mamum', '#'
+    %li
+      = link_to 'Surah', '#'
+    %li
+      = link_to 'News', '#'
+
+  - if murrobi?
+    %li
+      = link_to 'Mamum', '#'
+%ul.nav.navbar-nav.navbar-right
+  - if current_user
+    %li
+      = link_to current_user.email, edit_user_path
+    %li.active
+      = link_to 'Logout', destroy_user_session_path, method: :delete
