@@ -28,6 +28,6 @@ test:
 
 production:
   <<: *default
-  database: odoh_database
-  username: postgres
-  password: edogawa3
+  database: ddf4gtjuoatdll
+  username: bpgerewhngusub
+  password: wLRvBdUi460Ki6DMNFFaATB8cu
