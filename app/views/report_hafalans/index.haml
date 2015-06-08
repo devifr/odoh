@@ -1,0 +1,33 @@
+.container
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title List Hafalan
+    .panel-body
+      = link_to 'New', new_report_hafalan_path, class: 'btn btn-default'
+      %table.table.table-hover.table-bordered.table-striped
+        %thead
+          %tr
+            %th
+              Date
+            %th
+              Muhafidz/-ah
+            %th
+              Surat
+            %th
+              Ayat
+            %th
+              Action
+        %tbody
+          - @report_hafalans.each do |report_hafalan|
+            %tr
+              %td 
+                = datetime_format report_hafalan.updated_at
+              %td 
+                =report_hafalan.user.name
+              %td 
+                =report_hafalan.surah.name
+              %td 
+                = "#{report_hafalan.from_ayat} - #{report_hafalan.to_ayat}"
+              %td 
+                = link_to 'Edit', edit_report_hafalan_path(report_hafalan.id)
+                =# link_to 'Destroy', report_hafalan_path(report_hafalan.id), method: :delete, data: { confirm: 'Are you sure?' }

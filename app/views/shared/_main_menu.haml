@@ -2,16 +2,16 @@
   %li
     = link_to 'Dashboard', '#'
   %li
-    = link_to 'Report Hafalan', '#'
+    = link_to 'Report Hafalan', report_hafalans_path
   - if admin?
     %li
       = link_to 'Murrobi', murrobis_path
     %li
       = link_to 'Mamum', mamums_path
     %li
-      = link_to 'Surah', '#'
+      = link_to 'Surah', surahs_path
     %li
-      = link_to 'News', '#'
+      =# link_to 'News', '#'
 
   - if murrobi?
     %li

@@ -1,0 +1,16 @@
+= form_failure_message @surah
+- url_path = @surah.new_record? ? surahs_path : surah_path
+- method = @surah.new_record? ? "post" : "put"
+= form_for @surah, url: url_path, html: { role: 'form', method: method } do |f|
+
+  .form-group
+    = f.label :name
+    .controls 
+      = f.text_field :name, placeholder: 'Nama Surah', class: 'form-control'
+  .form-group
+    = f.label :total
+    .controls 
+      = f.text_field :total, placeholder: 'Total Surah', class: 'form-control'
+  .form-group
+    = f.submit 'Save', class: 'btn btn-primary'
+    = link_to 'Back', surahs_path, class: 'btn btn-default'

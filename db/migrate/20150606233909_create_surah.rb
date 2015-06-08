@@ -4,6 +4,7 @@ class CreateSurah < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.integer :total
+      t.timestamps
     end
   end
 end

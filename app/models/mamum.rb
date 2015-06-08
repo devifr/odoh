@@ -6,8 +6,8 @@ class Mamum < User
   validates_presence_of :group, :email
 
   def self.filter_by_murrobi(user)
-    self
-    where(ancestry: user.id) if user.role_id == 2
+    return self.all if user.role_id == 1
+    return where(ancestry: user.id) if user.role_id == 2
   end
   
 end

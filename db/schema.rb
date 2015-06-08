@@ -17,27 +17,35 @@ ActiveRecord::Schema.define(version: 20150607053617) do
   enable_extension "plpgsql"
 
   create_table "news", force: :cascade do |t|
-    t.string "title"
-    t.text   "body"
-    t.string "author"
+    t.string   "title"
+    t.text     "body"
+    t.string   "author"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "report_hafalan", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "surah_id"
-    t.integer "from_ayat"
-    t.integer "to_ayat"
-    t.boolean "hafal"
+  create_table "report_hafalans", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "surah_id"
+    t.integer  "from_ayat"
+    t.integer  "to_ayat"
+    t.boolean  "hafal"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "roles", force: :cascade do |t|
-    t.string "name"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "surahs", force: :cascade do |t|
-    t.string  "name"
-    t.text    "description"
-    t.integer "total"
+    t.string   "name"
+    t.text     "description"
+    t.integer  "total"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,0 +1,27 @@
+.container
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title List Surah
+    .panel-body
+      =# link_to 'New', new_surah_path, class: 'btn btn-default'
+      %table.table.table-hover.table-bordered.table-striped
+        %thead
+          %tr
+            %th
+              Nama Surah
+            %th
+              Jumlah Surah
+            %th
+              Action
+        %tbody
+          - @surahs.each do |surah|
+            %tr
+              %td 
+                = surah.name
+              %td 
+                = surah.total
+              %td 
+                = link_to 'Edit', edit_surah_path(surah.id)
+                =# link_to 'Destroy', surah_path(surah.id), method: :delete, data: { confirm: 'Are you sure?' }
+    .panel-footer
+      = paginate @surahs

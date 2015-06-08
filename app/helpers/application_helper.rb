@@ -51,5 +51,14 @@ module ApplicationHelper
     html.html_safe
   end
 
+  def datetime_format(datetime)
+    begin
+      current_time = datetime.strftime('%d-%m-%Y %H:%M')
+    rescue
+      current_time = Time.parse(value).utc.strftime('%d-%m-%Y %H:%M') rescue nil
+    end
+    current_time
+  end
+
 
 end

@@ -4,6 +4,7 @@ class CreateNewsTable < ActiveRecord::Migration
       t.string :title
       t.text :body
       t.string :author
+      t.timestamps
     end
   end
 end
