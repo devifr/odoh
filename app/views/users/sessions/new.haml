@@ -1,0 +1,22 @@
+.logmod__heading
+  %span.logmod__heading-subtitle Enter your email and password to sign in
+.logmod__form
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .sminputs
+      .input.full
+        = f.label :email, class: 'string optional'
+        = f.email_field :email, autofocus: true, class: "string optional", size: 50, placeholder: 'Email'
+    .sminputs
+      .input.full
+        = f.label :password, class: 'string optional'
+        = f.password_field :password, autocomplete: "off", class: "string optional", size: 50, placeholder: 'Password'
+        %span.hide-password Show
+    .simform__actions
+      = f.submit "Log in", class: "sumbit"
+      %span.simform__actions-sidetext
+        - if devise_mapping.rememberable?
+          = f.check_box :remember_me
+          = f.label :remember_me, class: 'special'
+        %br
+        - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+          = link_to "Forgot your password?", new_password_path(resource_name), class: 'special'
