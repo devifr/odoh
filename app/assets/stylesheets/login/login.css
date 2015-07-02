@@ -1,7 +1,7 @@
 body{
-  background: url(back.png);
+  background: url('back.png');
   background-color: #444;
-  background: url(pinlayer2.png),url(pinlayer1.png),url(back.png);
+  background: url('pinlayer2.png'),url('pinlayer1.png'),url('back.png');
 }
 
 .vertical-offset-100{
