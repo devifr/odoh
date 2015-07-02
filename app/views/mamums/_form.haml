@@ -5,22 +5,22 @@
 
   .form-group
     = f.label :name
-    .controls 
+    .controls
       = f.text_field :name, placeholder: 'Nama', class: 'form-control'
   .form-group
     = f.label :email
-    .controls 
+    .controls
       = f.text_field :email, placeholder: 'nama@mail.com', class: 'form-control'
   .form-group
     = f.label :password
-    .controls 
+    .controls
       = f.password_field :password, class: 'form-control'
   .form-group
     = f.label :group
-    .controls 
+    .controls
       - if murrobi?
         = current_user.group
-        = f.hidden_field :group, current_user.group  
+        = f.hidden_field :group, current_user.group
       - else
         = f.select :group, options_for_select(@groups, @mamum.group), {prompt: 'Select Group'}, {class: 'form-control', 'data-url': select_murrabis_path}
   .form-group
@@ -28,29 +28,29 @@
     .controls.get-murrobis
       - if murrobi?
         = current_user.name
-        = f.hidden_field :parent_id, current_user.id        
+        = f.hidden_field :parent_id, current_user.id
       - else
         - if @murrobis
           = f.select(:parent_id, options_from_collection_for_select(@murrobis, :id, :name, @mamum.try(:parent_id)), {prompt: 'Select Murrobi'}, class: "form-control")
   .form-group
     = f.label :alamat
-    .controls 
+    .controls
       = f.text_area :alamat, class: 'form-control'
   .form-group
     = f.label :no_telp
-    .controls 
+    .controls
       = f.text_field :no_telp, placeholder: '082312316', class: 'form-control'
   .form-group
     = f.label :pin_bb
-    .controls 
+    .controls
       = f.text_field :pin_bb, placeholder: 'A1BCA1', class: 'form-control'
   .form-group
     = f.label :facebook
-    .controls 
+    .controls
       = f.text_field :facebook, placeholder: 'http://facebook/name', class: 'form-control'
   .form-group
     = f.label :twitter
-    .controls 
+    .controls
       = f.text_field :twitter, placeholder: 'http://twitter/name', class: 'form-control'
   .form-group
     = f.submit 'Save', class: 'btn btn-primary'

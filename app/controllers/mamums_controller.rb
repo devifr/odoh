@@ -33,7 +33,7 @@ class MamumsController < ApplicationController
     if @mamum.update(mamum_params)
       flash[:notice] = 'Mamum was successfully updated.'
       redirect_to mamums_path
-    else  
+    else
       flash[:error] = @mamum.errors.full_messages
       render :edit
     end
@@ -64,10 +64,11 @@ class MamumsController < ApplicationController
 
     def set_select
       @groups = [['Akhwat', 'akhwat'], ['Ikhwan', 'ikhwan']]
+      @murrobis = Murrobi.all
     end
 
     def mamum_params
-      params.require(:mamum).permit(:name, :alamat, :email, :no_telp, :password, :pin_bb, 
+      params.require(:mamum).permit(:name, :alamat, :email, :no_telp, :password, :pin_bb,
                                       :facebook, :twitter, :role_id, :parent_id, :group)
     end
 

@@ -9,5 +9,8 @@ class Mamum < User
     return self.all if user.role_id == 1
     return where(ancestry: user.id) if user.role_id == 2
   end
-  
+
+  def parent
+    Murrobi.find self.parent_id
+  end
 end

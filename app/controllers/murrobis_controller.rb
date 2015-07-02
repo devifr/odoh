@@ -33,7 +33,7 @@ class MurrobisController < ApplicationController
     if @murrobi.update(murrobi_params)
       flash[:notice] = 'Murrobi was successfully updated.'
       redirect_to murrobis_path
-    else  
+    else
       flash[:error] = @murrobi.errors.full_messages
       render :edit
     end
@@ -61,7 +61,7 @@ class MurrobisController < ApplicationController
     end
 
     def murrobi_params
-      params.require(:murrobi).permit(:name, :alamat, :email, :no_telp, :password, :pin_bb, 
+      params.require(:murrobi).permit(:name, :alamat, :email, :no_telp, :password, :pin_bb,
                                       :facebook, :twitter, :role_id, :parent_id, :group)
     end
 
