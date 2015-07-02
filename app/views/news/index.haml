@@ -1,0 +1,29 @@
+.container
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title List News
+    .panel-body
+      = link_to 'New', new_news_path, class: 'btn btn-default'
+      %table.table.table-hover.table-bordered.table-striped
+        %thead
+          %tr
+            %th
+              Date
+            %th
+              Title
+            %th
+              Author
+            %th
+              Action
+        %tbody
+          - @news.each do |news|
+            %tr
+              %td
+                = datetime_format news.updated_at
+              %td
+                =news.title
+              %td
+                =news.author
+              %td
+                = link_to 'Edit', edit_news_path(news.id)
+                = link_to 'Destroy', news_path(news.id), method: :delete, data: { confirm: 'Are you sure?' }

@@ -1,0 +1,24 @@
+= form_failure_message @news
+- url_path = @news.new_record? ? news_index_path : news_path
+- method = @news.new_record? ? "post" : "put"
+= form_for @news, url: url_path, html: { role: 'form', method: method, multipart: true } do |f|
+
+  .form-group
+    = f.label :images
+    .controls
+      = f.file_field :images, class: 'form-control'
+  .form-group
+    = f.label :title
+    .controls
+      = f.text_field :title, placeholder: 'Title', class: 'form-control'
+  .form-group
+    = f.label :author
+    .controls
+      = f.text_field :author, placeholder: 'Author', class: 'form-control'
+  .form-group
+    = f.label :body
+    .controls
+      = f.text_area :body, placeholder: '256', class: 'form-control'
+  .form-group
+    = f.submit 'Save', class: 'btn btn-primary'
+    = link_to 'Back', news_index_path, class: 'btn btn-default'
