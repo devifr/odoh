@@ -10,9 +10,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require login/font-awesome.min
- *= require login/style
- *= require login/normalize
+ *= require login/login
  *= require_self
 
  */
+@import "bootstrap";

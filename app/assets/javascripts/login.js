@@ -11,4 +11,5 @@
 // about supported directives.
 //
 //= require jquery
-//= require login/index
+//= require login/tweenLite.min
+//= require login/login

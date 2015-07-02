@@ -1,22 +1,19 @@
-.logmod__heading
-  %span.logmod__heading-subtitle Enter your email and password to sign in
-.logmod__form
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .sminputs
-      .input.full
-        = f.label :email, class: 'string optional'
-        = f.email_field :email, autofocus: true, class: "string optional", size: 50, placeholder: 'Email'
-    .sminputs
-      .input.full
-        = f.label :password, class: 'string optional'
-        = f.password_field :password, autocomplete: "off", class: "string optional", size: 50, placeholder: 'Password'
-        %span.hide-password Show
-    .simform__actions
-      = f.submit "Log in", class: "sumbit"
-      %span.simform__actions-sidetext
-        - if devise_mapping.rememberable?
-          = f.check_box :remember_me
-          = f.label :remember_me, class: 'special'
-        %br
-        - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
-          = link_to "Forgot your password?", new_password_path(resource_name), class: 'special'
+.col-md-4.col-md-offset-4
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title Please sign in
+    .panel-body
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        %fieldset
+          .form-group
+          = f.email_field :email, autofocus: true, class: "form-control", placeholder: 'Email'
+          .form-group
+          = f.password_field :password, autocomplete: "off", class: "form-control", placeholder: 'Password'
+          = f.submit "Login", class: "btn btn-lg btn-success btn-block"
+          - if devise_mapping.rememberable?
+            .checkbox
+              %label
+                = f.check_box :remember_me
+            %br
+            - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+              = link_to "Forgot your password?", new_password_path(resource_name), class: 'special'

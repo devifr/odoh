@@ -6,8 +6,6 @@
     = javascript_include_tag 'login', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    .logmod
-      .logmod__wrapper
-        .logmod__container
-          .logmod__tab-wrapper
-            = yield
+    .container
+      .row.vertical-offset-100
+        = yield
