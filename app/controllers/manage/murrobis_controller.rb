@@ -1,4 +1,4 @@
-class MurrobisController < ApplicationController
+class Manage::MurrobisController < Manage::ApplicationController
   prepend_before_filter :draw_password, only: :update
   before_action :set_murrobi, only: [:show, :edit, :update, :destroy]
   before_action :set_select, except: [:show, :index, :destroy]
@@ -22,7 +22,7 @@ class MurrobisController < ApplicationController
 
     if @murrobi.save
       flash[:notice] = "Murrobi was successfully created."
-      redirect_to murrobis_path
+      redirect_to manage_murrobis_path
     else
       flash[:error] = @murrobi.errors.full_messages
       render :new
@@ -32,7 +32,7 @@ class MurrobisController < ApplicationController
   def update
     if @murrobi.update(murrobi_params)
       flash[:notice] = 'Murrobi was successfully updated.'
-      redirect_to murrobis_path
+      redirect_to manage_murrobis_path
     else
       flash[:error] = @murrobi.errors.full_messages
       render :edit
@@ -42,7 +42,7 @@ class MurrobisController < ApplicationController
   def destroy
     @murrobi.destroy
     flash[:notice] = 'Murrobi was successfully destroy.'
-    redirect_to murrobis_path
+    redirect_to manage_murrobis_path
   end
 
   private

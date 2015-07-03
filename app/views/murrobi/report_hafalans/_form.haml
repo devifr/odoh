@@ -1,24 +1,24 @@
 = form_failure_message @report_hafalan
-- url_path = @report_hafalan.new_record? ? report_hafalans_path : report_hafalan_path
+- url_path = @report_hafalan.new_record? ? murrobi_report_hafalans_path : murrobi_report_hafalan_path
 - method = @report_hafalan.new_record? ? "post" : "put"
 = form_for @report_hafalan, url: url_path, html: { role: 'form', method: method } do |f|
 
   .form-group
     = f.label :user_id
-    .controls 
+    .controls
       = f.select :user_id, options_from_collection_for_select(@mamums, :id, :name, @report_hafalan.user_id), {prompt: 'Select Muhafidz/-ah'}, class: 'form-control'
   .form-group
     = f.label :surah_id
-    .controls 
-      = f.select :surah_id, options_from_collection_for_select(@surahs, :id, :name, @report_hafalan.surah_id), {prompt: 'Select Surah'}, class: 'form-control'  
+    .controls
+      = f.select :surah_id, options_from_collection_for_select(@surahs, :id, :name, @report_hafalan.surah_id), {prompt: 'Select Surah'}, class: 'form-control'
   .form-group
     = f.label :from_ayat
-    .controls 
+    .controls
       = f.text_field :from_ayat, placeholder: '1', class: 'form-control'
   .form-group
     = f.label :to_ayat
-    .controls 
+    .controls
       = f.text_field :to_ayat, placeholder: '256', class: 'form-control'
   .form-group
     = f.submit 'Save', class: 'btn btn-primary'
-    = link_to 'Back', report_hafalans_path, class: 'btn btn-default'
+    = link_to 'Back', murrobi_report_hafalans_path, class: 'btn btn-default'

@@ -3,7 +3,7 @@
     .panel-heading
       %h3.panel-title List Mamum
     .panel-body
-      = link_to 'New', new_mamum_path, class: 'btn btn-default'
+      = link_to 'New', new_manage_mamum_path, class: 'btn btn-default'
       %table.table.table-hover.table-bordered.table-striped
         %thead
           %tr
@@ -20,14 +20,14 @@
         %tbody
           - @mamums.each do |mamum|
             %tr
-              %td 
+              %td
                 =mamum.group
-              %td 
+              %td
                 =mamum.name
-              %td 
+              %td
                 =mamum.email
-              %td 
+              %td
                 =mamum.no_telp
-              %td 
-                = link_to 'Edit', edit_mamum_path(mamum.id)
-                = link_to 'Destroy', mamum_path(mamum.id), method: :delete, data: { confirm: 'Are you sure?' }
+              %td
+                = link_to 'Edit', edit_manage_mamum_path(mamum.id)
+                = link_to 'Destroy', manage_mamum_path(mamum.id), method: :delete, data: { confirm: 'Are you sure?' }

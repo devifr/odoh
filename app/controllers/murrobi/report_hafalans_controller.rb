@@ -1,9 +1,10 @@
-class Murrabi::ReportHafalansController < MurrobisController
+class Murrobi::ReportHafalansController < Manage::ApplicationController
   before_action :set_report_hafalan, only: [:show, :edit, :update, :destroy]
   before_action :set_select, only: [:new, :create, :edit, :update]
 
   def index
-    @report_hafalans = ReportHafalan.by_murrobi(current_user).page(params[:page])
+    murrobi = Murrobi.find current_user.id
+    @report_hafalans = ReportHafalan.by_murrobi(murrobi).page(params[:page])
   end
 
   def show

@@ -1,21 +1,19 @@
 %ul.nav.navbar-nav
   %li
     = link_to 'Dashboard', '#'
-  %li
-    = link_to 'Report Hafalan', report_hafalans_path
   - if admin?
     %li
-      = link_to 'Murrobi', murrobis_path
+      = link_to 'Murrobi', manage_murrobis_path
     %li
-      = link_to 'Mamum', mamums_path
+      = link_to 'Mamum', manage_mamums_path
     %li
-      = link_to 'Surah', surahs_path
+      = link_to 'Surah', manage_surahs_path
     %li
-      = link_to 'News', news_index_path
+      = link_to 'News', manage_news_index_path
 
   - if murrobi?
     %li
-      = link_to 'Mamum', mamums_path
+      = link_to 'Report Hafalan', murrobi_report_hafalans_path
 %ul.nav.navbar-nav.navbar-right
   - if current_user
     %li

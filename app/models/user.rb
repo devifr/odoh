@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
     self.role_id == 2
   end
 
+  def admin?
+    self.role_id == 1
+  end
+
 end

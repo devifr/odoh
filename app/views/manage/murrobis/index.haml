@@ -3,7 +3,7 @@
     .panel-heading
       %h3.panel-title List Murrobi
     .panel-body
-      = link_to 'New', new_murrobi_path, class: 'btn btn-default'
+      = link_to 'New', new_manage_murrobi_path, class: 'btn btn-default'
       %table.table.table-hover.table-bordered.table-striped
         %thead
           %tr
@@ -20,14 +20,14 @@
         %tbody
           - @murrobis.each do |murrobi|
             %tr
-              %td 
+              %td
                 =murrobi.group
-              %td 
+              %td
                 =murrobi.name
-              %td 
+              %td
                 =murrobi.email
-              %td 
+              %td
                 =murrobi.no_telp
-              %td 
-                = link_to 'Edit', edit_murrobi_path(murrobi.id)
-                = link_to 'Destroy', murrobi_path(murrobi.id), method: :delete, data: { confirm: 'Are you sure?' }
+              %td
+                = link_to 'Edit', edit_manage_murrobi_path(murrobi.id)
+                = link_to 'Destroy', manage_murrobi_path(murrobi.id), method: :delete, data: { confirm: 'Are you sure?' }

@@ -1,44 +1,44 @@
 = form_failure_message @murrobi
-- url_path = @murrobi.new_record? ? murrobis_path : murrobi_path
+- url_path = @murrobi.new_record? ? manage_murrobis_path : manage_murrobi_path
 - method = @murrobi.new_record? ? "post" : "put"
 = form_for @murrobi, url: url_path, html: { role: 'form', method: method } do |f|
 
   .form-group
     = f.label :name
-    .controls 
+    .controls
       = f.text_field :name, placeholder: 'Nama', class: 'form-control'
   .form-group
     = f.label :email
-    .controls 
+    .controls
       = f.text_field :email, placeholder: 'nama@mail.com', class: 'form-control'
   .form-group
     = f.label :password
-    .controls 
+    .controls
       = f.password_field :password, class: 'form-control'
   .form-group
     = f.label :group
-    .controls 
+    .controls
       = f.select :group, options_for_select(@groups, @murrobi.group), class: 'form-control'
   .form-group
     = f.label :alamat
-    .controls 
+    .controls
       = f.text_area :alamat, class: 'form-control'
   .form-group
     = f.label :no_telp
-    .controls 
+    .controls
       = f.text_field :no_telp, placeholder: '082312316', class: 'form-control'
   .form-group
     = f.label :pin_bb
-    .controls 
+    .controls
       = f.text_field :pin_bb, placeholder: 'A1BCA1', class: 'form-control'
   .form-group
     = f.label :facebook
-    .controls 
+    .controls
       = f.text_field :facebook, placeholder: 'http://facebook/name', class: 'form-control'
   .form-group
     = f.label :twitter
-    .controls 
+    .controls
       = f.text_field :twitter, placeholder: 'http://twitter/name', class: 'form-control'
   .form-group
     = f.submit 'Save', class: 'btn btn-primary'
-    = link_to 'Back', murrobis_path, class: 'btn btn-default'
+    = link_to 'Back', manage_murrobis_path, class: 'btn btn-default'
