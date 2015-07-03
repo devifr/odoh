@@ -1,5 +1,5 @@
 = form_failure_message @mamum
-- url_path = @mamum.new_record? ? mamums_path : mamum_path
+- url_path = @mamum.new_record? ? manage_mamums_path : manage_mamum_path
 - method = @mamum.new_record? ? "post" : "put"
 = form_for @mamum, url: url_path, html: { role: 'form', method: method } do |f|
 
@@ -54,4 +54,4 @@
       = f.text_field :twitter, placeholder: 'http://twitter/name', class: 'form-control'
   .form-group
     = f.submit 'Save', class: 'btn btn-primary'
-    = link_to 'Back', mamums_path, class: 'btn btn-default'
+    = link_to 'Back', manage_mamums_path, class: 'btn btn-default'

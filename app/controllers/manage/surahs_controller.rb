@@ -1,4 +1,4 @@
-class SurahsController < ApplicationController
+class Manage::SurahsController < Manage::ApplicationController
   before_action :set_surah, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -20,7 +20,7 @@ class SurahsController < ApplicationController
 
     if @surah.save
       flash[:notice] = "Surah was successfully created."
-      redirect_to surahs_path
+      redirect_to manage_surahs_path
     else
       flash[:error] = @surah.errors.full_messages
       render :new
@@ -30,8 +30,8 @@ class SurahsController < ApplicationController
   def update
     if @surah.update(surah_params)
       flash[:notice] = 'Surah was successfully updated.'
-      redirect_to surahs_path
-    else  
+      redirect_to manage_surahs_path
+    else
       flash[:error] = @surah.errors.full_messages
       render :edit
     end
@@ -40,7 +40,7 @@ class SurahsController < ApplicationController
   def destroy
     @surah.destroy
     flash[:notice] = 'Surah was successfully destroy.'
-    redirect_to surahs_path
+    redirect_to manage_surahs_path
   end
 
   private

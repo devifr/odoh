@@ -1,4 +1,4 @@
-class ReportHafalansController < ApplicationController
+class Manage::ReportHafalansController < Manage::ApplicationController
   before_action :set_report_hafalan, only: [:show, :edit, :update, :destroy]
   before_action :set_select, only: [:new, :create, :edit, :update]
 
@@ -21,7 +21,7 @@ class ReportHafalansController < ApplicationController
 
     if @report_hafalan.save
       flash[:notice] = "ReportHafalan was successfully created."
-      redirect_to report_hafalans_path
+      redirect_to manage_report_hafalans_path
     else
       flash[:error] = @report_hafalan.errors.full_messages
       render :new
@@ -31,8 +31,8 @@ class ReportHafalansController < ApplicationController
   def update
     if @report_hafalan.update(report_hafalan_params)
       flash[:notice] = 'ReportHafalan was successfully updated.'
-      redirect_to report_hafalans_path
-    else  
+      redirect_to manage_report_hafalans_path
+    else
       flash[:error] = @report_hafalan.errors.full_messages
       render :edit
     end
@@ -41,7 +41,7 @@ class ReportHafalansController < ApplicationController
   def destroy
     @report_hafalan.destroy
     flash[:notice] = 'ReportHafalan was successfully destroy.'
-    redirect_to report_hafalans_path
+    redirect_to manage_report_hafalans_path
   end
 
   private

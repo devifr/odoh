@@ -1,4 +1,4 @@
-class NewsController < ApplicationController
+class Manage::NewsController < Manage::ApplicationController
   before_action :set_news, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -20,7 +20,7 @@ class NewsController < ApplicationController
 
     if @news.save
       flash[:notice] = "News was successfully created."
-      redirect_to news_index_path
+      redirect_to manage_news_index_path
     else
       flash[:error] = @news.errors.full_messages
       render :new
@@ -30,7 +30,7 @@ class NewsController < ApplicationController
   def update
     if @news.update(news_params)
       flash[:notice] = 'News was successfully updated.'
-      redirect_to news_index_path
+      redirect_to manage_news_index_path
     else
       flash[:error] = @news.errors.full_messages
       render :edit
@@ -40,7 +40,7 @@ class NewsController < ApplicationController
   def destroy
     @news.destroy
     flash[:notice] = 'News was successfully destroy.'
-    redirect_to news_index_path
+    redirect_to manage_news_index_path
   end
 
   private

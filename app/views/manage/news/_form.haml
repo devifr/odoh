@@ -1,5 +1,5 @@
 = form_failure_message @news
-- url_path = @news.new_record? ? news_index_path : news_path
+- url_path = @news.new_record? ? manage_news_index_path : manage_news_path
 - method = @news.new_record? ? "post" : "put"
 = form_for @news, url: url_path, html: { role: 'form', method: method, multipart: true } do |f|
 
@@ -21,4 +21,4 @@
       = f.text_area :body, placeholder: '256', class: 'form-control'
   .form-group
     = f.submit 'Save', class: 'btn btn-primary'
-    = link_to 'Back', news_index_path, class: 'btn btn-default'
+    = link_to 'Back', manage_news_index_path, class: 'btn btn-default'

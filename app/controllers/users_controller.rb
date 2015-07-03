@@ -8,8 +8,8 @@ class UsersController < ApplicationController
     if current_user.update(user_params)
       flash[:notice] = 'Murrobi was successfully updated.'
       redirect_to edit_user_path
-    else  
-      flash[:error] = @murrobi.errors.full_messages
+    else
+      flash[:error] = current_user.errors.full_messages
       render :edit
     end
 
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :alamat, :email, :no_telp, :pin_bb, 
+      params.require(:user).permit(:name, :alamat, :email, :no_telp, :pin_bb,
                                    :facebook, :twitter)
     end
 end

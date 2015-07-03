@@ -16,12 +16,12 @@
         %tbody
           - @surahs.each do |surah|
             %tr
-              %td 
+              %td
                 = surah.name
-              %td 
+              %td
                 = surah.total
-              %td 
-                = link_to 'Edit', edit_surah_path(surah.id)
+              %td
+                = link_to 'Edit', edit_manage_surah_path(surah.id)
                 =# link_to 'Destroy', surah_path(surah.id), method: :delete, data: { confirm: 'Are you sure?' }
     .panel-footer
       = paginate @surahs

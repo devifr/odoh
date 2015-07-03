@@ -3,7 +3,7 @@
     .panel-heading
       %h3.panel-title List Hafalan
     .panel-body
-      = link_to 'New', new_report_hafalan_path, class: 'btn btn-default'
+      = link_to 'New', new_manage_report_hafalan_path, class: 'btn btn-default'
       %table.table.table-hover.table-bordered.table-striped
         %thead
           %tr
@@ -20,14 +20,14 @@
         %tbody
           - @report_hafalans.each do |report_hafalan|
             %tr
-              %td 
+              %td
                 = datetime_format report_hafalan.updated_at
-              %td 
+              %td
                 =report_hafalan.user.name
-              %td 
+              %td
                 =report_hafalan.surah.name
-              %td 
+              %td
                 = "#{report_hafalan.from_ayat} - #{report_hafalan.to_ayat}"
-              %td 
-                = link_to 'Edit', edit_report_hafalan_path(report_hafalan.id)
-                =# link_to 'Destroy', report_hafalan_path(report_hafalan.id), method: :delete, data: { confirm: 'Are you sure?' }
+              %td
+                = link_to 'Edit', edit_manage_report_hafalan_path(report_hafalan.id)
+                =# link_to 'Destroy', manage_report_hafalan_path(report_hafalan.id), method: :delete, data: { confirm: 'Are you sure?' }

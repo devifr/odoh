@@ -1,4 +1,4 @@
-class MamumsController < ApplicationController
+class Manage::MamumsController < Manage::ApplicationController
   prepend_before_filter :draw_password, only: :update
   before_action :set_mamum, only: [:show, :edit, :update, :destroy]
   before_action :set_select, except: [:show, :index, :destroy]
@@ -22,7 +22,7 @@ class MamumsController < ApplicationController
 
     if @mamum.save
       flash[:notice] = "Mamum was successfully created."
-      redirect_to mamums_path
+      redirect_to manage_mamums_path
     else
       flash[:error] = @mamum.errors.full_messages
       render :new
@@ -32,7 +32,7 @@ class MamumsController < ApplicationController
   def update
     if @mamum.update(mamum_params)
       flash[:notice] = 'Mamum was successfully updated.'
-      redirect_to mamums_path
+      redirect_to manage_mamums_path
     else
       flash[:error] = @mamum.errors.full_messages
       render :edit
@@ -42,7 +42,7 @@ class MamumsController < ApplicationController
   def destroy
     @mamum.destroy
     flash[:notice] = 'Mamum was successfully destroy.'
-    redirect_to mamums_path
+    redirect_to manage_mamums_path
   end
 
   def get_murrobis
