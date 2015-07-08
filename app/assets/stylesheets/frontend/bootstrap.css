@@ -5670,7 +5670,6 @@ button.close {
   left: -11px;
   margin-top: -11px;
   border-right-color: #999;
-  border-right-color:;
   border-left-width: 0;
 }
 .popover.right > .arrow:after {
@@ -5701,7 +5700,6 @@ button.close {
   margin-top: -11px;
   border-right-width: 0;
   border-left-color: #999;
-  border-left-color:;
 }
 .popover.left > .arrow:after {
   right: 1px;
