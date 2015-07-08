@@ -288,7 +288,7 @@ html {
   padding: 0;
   cursor: pointer;
   background-color: transparent;
-  color: rgba(75, 89, 102, 0.85);
+  color: rgba(black, 0.85);
 }
 .sminputs .hide-password {
   display: inline-block;
