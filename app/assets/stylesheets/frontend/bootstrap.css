@@ -5656,7 +5656,6 @@ button.close {
   left: 50%;
   margin-left: -11px;
   border-top-color: #999;
-  border-top-color:;
   border-bottom-width: 0;
 }
 .popover.top > .arrow:after {
