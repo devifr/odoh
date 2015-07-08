@@ -10,15 +10,15 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_self
+ *= require frontend/animate
+ *= require frontend/bootstrap-theme
+ *= require frontend/bootstrap
+ *= require frontend/default
+ *= require frontend/demo
+ *= require frontend/font-awesome
+ *= require frontend/isotope
+ *= require frontend/style
 
  */
 @import "bootstrap";
 @import 'bootstrap-datetimepicker';
-
-.navbar-nav{
-  width: 50%;
-}
-.navbar-right{
-  width: 20%;
-}

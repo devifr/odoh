@@ -9,6 +9,8 @@ class ApplicationController < ActionController::Base
       murrobi_root_path
     elsif current_user.admin?
       manage_root_path
+    else
+      root_path
     end
   end
 end

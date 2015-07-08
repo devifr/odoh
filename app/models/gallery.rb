@@ -1,4 +1,4 @@
-class News < ActiveRecord::Base
+class Gallery < ActiveRecord::Base
   has_attached_file :images, :styles => {
                                           :medium => "300x300>",
                                           :thumb => "100x100>"
