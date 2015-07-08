@@ -14,7 +14,7 @@ html {
   bottom: 0;
   left: 0;
   opacity: 1;
-  background: rgba(black, 0.2);
+  background: ;
   z-index: 1;
 }
 .logmod::after {
@@ -28,7 +28,7 @@ html {
   position: relative;
   max-width: 550px;
   border-radius: 4px;
-  box-shadow: 0 0 18px rgba(black, 0.2);
+  box-shadow: 0 0 18px ;
   margin: 120px auto;
 }
 .logmod__close {
@@ -288,7 +288,7 @@ html {
   padding: 0;
   cursor: pointer;
   background-color: transparent;
-  color: rgba(black, 0.85);
+  color: #000;
 }
 .sminputs .hide-password {
   display: inline-block;
