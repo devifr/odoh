@@ -5685,7 +5685,6 @@ button.close {
   margin-left: -11px;
   border-top-width: 0;
   border-bottom-color: #999;
-  border-bottom-color:;
 }
 .popover.bottom > .arrow:after {
   top: 1px;
