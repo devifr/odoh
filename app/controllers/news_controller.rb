@@ -7,6 +7,7 @@ class NewsController < FrontendController
 
   def show
     @news = News.find(params[:id])
+    @latest_news = News.limit(5)
   end
 
 end
