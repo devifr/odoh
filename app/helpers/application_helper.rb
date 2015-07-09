@@ -1,4 +1,5 @@
 module ApplicationHelper
+  ALERT_TYPES = [:danger, :info, :success, :warning]
 
   def admin?
     current_user && current_user.role_id == 1
@@ -16,16 +17,14 @@ module ApplicationHelper
     flash_messages = []
     flash.each do |type, message|
       # Skip empty messages, e.g. for devise messages set to nothing in a locale file.
+      type = type.to_sym
       next if message.blank?
 
       type = :success if type == :notice
       type = :danger  if [:alert, :error].include?(type)
       next unless ALERT_TYPES.include?(type)
-
       Array(message).each do |msg|
-        text = content_tag(:div,
-                           content_tag(:a, raw("&times;"), class: "close", "data-dismiss" => "alert") +
-                           msg, class: "alert alert-#{type}")
+        text = content_tag(:div, msg, class: "alert alert-#{type}")
         flash_messages << text if message
       end
     end

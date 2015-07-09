@@ -7,11 +7,11 @@
       .col-md-8
         .dropdown
           %ul.nav.nav-pills
-            %li.active
+            %li
               = link_to 'Home', root_path
             %li
               = link_to 'Participant', participants_path
             %li
               = link_to 'News', news_index_path
             %li
-              %a{"href" =>("#") } Contact Us
+              = link_to 'Contact Us', contact_us_path

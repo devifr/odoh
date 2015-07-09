@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :participants, only: [:index, :show]
   resources :news, only: [:index, :show]
+  resources :contact_us, only: [:index, :create]
 
   get '/edit/user', to: 'users#edit'
   put '/edit/user', to: 'users#update'
