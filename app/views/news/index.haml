@@ -1,0 +1,7 @@
+.panel.panel-default
+  .panel-heading News
+  .panel-body
+    %ol
+      - @news.each do |row|
+        %li.list
+          = link_to row.title, news_path(row)

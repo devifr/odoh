@@ -29,6 +29,7 @@ gem 'devise'
 gem 'ancestry'        #tree
 gem 'kaminari'
 gem 'paperclip', require: 'paperclip' # attachment module
+gem 'truncate_html' # for trancate html
 # assets
 gem 'jquery-ui-rails'
 gem 'bootstrap-sass', '~> 3.0.3.0'

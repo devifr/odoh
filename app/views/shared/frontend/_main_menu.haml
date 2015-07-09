@@ -8,10 +8,10 @@
         .dropdown
           %ul.nav.nav-pills
             %li.active
-              %a{"href" =>"#" } Home
+              = link_to 'Home', root_path
             %li
-              %a{"href" =>("#") } Peserta
+              = link_to 'Participant', participants_path
             %li
-              %a{"href" =>("#") } News
+              = link_to 'News', news_index_path
             %li
               %a{"href" =>("#") } Contact Us

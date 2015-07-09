@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { sessions: "users/sessions" }
   root 'home#index'
+  resources :participants, only: [:index, :show]
+  resources :news, only: [:index, :show]
 
   get '/edit/user', to: 'users#edit'
   put '/edit/user', to: 'users#update'

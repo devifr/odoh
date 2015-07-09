@@ -1,0 +1,17 @@
+.row
+  .col-lg-8.col-md-8
+    .panel.panel-default
+      .panel-heading Participant List
+      .panel-body
+        %ol
+          - @participants.each do |row|
+            %li
+              = link_to row.email, participant_path(row)
+  .col-lg-4.col-md-4
+    .panel.panel-default
+      .panel-heading News
+      .panel-body
+        %ol
+          - @news.each do |row|
+            %li.list
+              = link_to row.title, news_path(row)

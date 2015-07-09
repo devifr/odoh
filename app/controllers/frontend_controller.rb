@@ -1,3 +1,3 @@
-class FrontendController < ApplicationController
+class FrontendController < ActionController::Base
   layout 'frontend'
 end

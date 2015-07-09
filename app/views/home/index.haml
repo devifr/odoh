@@ -1,0 +1,14 @@
+.container
+  .row
+    .big-box
+      .col-lg-12
+        - @news.each do |row|
+          .col-md-4
+            .box-bg
+              .wow.bounceInLeft{"data-wow-duration"=>"2s", "data-wow-delay"=>"0.9s"}
+                .align-center
+                  = image_tag row.images.url(:thumb)
+                  %h4.text-bold
+                    = link_to row.title, news_path(row)
+                  %p
+                    = truncate_html(row.body, length: 20, omission: '...')
